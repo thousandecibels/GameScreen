@@ -32,7 +32,7 @@ try {
 
     & $candle -nologo -wx -arch x64 "-dAppExe=$($app.FullName)" "-dAppIcon=$icon" "-dProductVersion=$version" "-dProductCode=$productCode" -out $object $installer
     if ($LASTEXITCODE -ne 0) { throw "WiX compilation failed with exit code $LASTEXITCODE." }
-    & $light -nologo -wx -spdb -out $msi $object
+    & $light -nologo -wx -spdb -ext (Join-Path $WixBin 'WixUIExtension.dll') -cultures:en-us -out $msi $object
     if ($LASTEXITCODE -ne 0) { throw "WiX linking failed with exit code $LASTEXITCODE." }
 
     Set-Content -LiteralPath $marker -Value 'GameScreen portable mode' -Encoding ascii
