@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="$(var.ProductCode)" Name="GameScreen" Language="1033" Version="$(var.ProductVersion)"
+           Manufacturer="GameScreen" UpgradeCode="1296B977-D78E-4D20-9E8B-D0BBAAE6B9CB">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine"
+             InstallPrivileges="elevated" Platform="x64" />
+    <MajorUpgrade Schedule="afterInstallInitialize"
+                  DowngradeErrorMessage="A newer version of GameScreen is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+    <Icon Id="GameScreen.ico" SourceFile="$(var.AppIcon)" />
+    <Property Id="ARPPRODUCTICON" Value="GameScreen.ico" />
+    <Property Id="ARPNOMODIFY" Value="1" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="GameScreen">
+          <Component Id="GameScreenApp" Guid="D793B0C4-C412-4590-B57B-81372708B827" Win64="yes">
+            <File Id="GameScreenExe" Source="$(var.AppExe)" KeyPath="yes">
+              <Shortcut Id="GameScreenStart" Directory="ProgramMenuFolder" Name="GameScreen"
+                        Description="Choose where your games open" WorkingDirectory="INSTALLFOLDER"
+                        Advertise="yes" Icon="GameScreen.ico" />
+            </File>
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder" />
+    </Directory>
+    <Feature Id="GameScreen" Title="GameScreen" Level="1">
+      <ComponentRef Id="GameScreenApp" />
+    </Feature>
+  </Product>
+</Wix>

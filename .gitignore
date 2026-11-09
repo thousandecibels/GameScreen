@@ -1,0 +1,4 @@
+# Generated binaries and release packages
+/build/
+/dist/
+/GameScreen.exe

@@ -1,0 +1,9 @@
+GameScreen Portable
+
+1. Extract the entire ZIP to a folder you can write to.
+2. Keep portable.flag next to GameScreen.exe.
+3. Open GameScreen.exe and approve the Windows administrator prompt.
+
+Your settings are stored under Data\<computer name>\settings.json in this folder.
+On a different PC, select its gaming display and add any local game executables.
+To move GameScreen Portable, quit it from the tray and move the entire folder.
