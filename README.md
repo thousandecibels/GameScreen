@@ -1,6 +1,7 @@
-# GameScreen
-
-<img src="assets/GameScreen.svg" width="64" height="64" alt="GameScreen icon">
+<h1 align="center">
+  GameScreen<br>
+  <img src="assets/GameScreen.svg" width="64" height="64" alt="">
+</h1>
 
 GameScreen routes PC games to a display you choose. Keep your work monitor as the Windows main display and use a second monitor for gaming.
 
